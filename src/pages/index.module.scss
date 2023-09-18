@@ -1,0 +1,78 @@
+.home {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentContainer {
+  display: flex;
+}
+
+.domText {
+  background-color: #111111;
+  padding-right: 16px;
+  border-right: 3px solid white;
+  width: fit-content;
+  animation-name: domAnimation;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  z-index: 999;
+}
+
+@keyframes domAnimation {
+  0% {
+    padding-left: initial;
+  }
+
+  20% {
+    padding-left: initial;
+  }
+
+  38% {
+    padding-left: 80px;
+  }
+
+  50% {
+    padding-left: 80px;
+  }
+
+  73% {
+    padding-left: initial;
+  }
+
+  100% {
+  }
+}
+
+.enterText {
+  animation-name: enterTextAnimation;
+  animation-delay: 1.5s;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  margin-left: 16px;
+
+  transition: 0.4s;
+  position: relative;
+  right: 55%;
+  overflow: hidden !important;
+}
+
+@keyframes enterTextAnimation {
+  0% {
+    right: 55%;
+  }
+
+  40% {
+    right: 55%;
+  }
+
+  82% {
+    right: 0%;
+  }
+
+  100% {
+    right: 0%;
+  }
+}
