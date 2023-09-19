@@ -1,5 +1,18 @@
-html, body, #__next {
-    height: 100%;
+$animation-duration: 1.3s;
+
+html,
+body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+#__next {
+  height: 100%;
+}
+
+next-route-announcer {
+  display: none;
 }
 
 body {
@@ -9,4 +22,24 @@ body {
   font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+}
+
+100% {
+    opacity: 1;
+}
 }

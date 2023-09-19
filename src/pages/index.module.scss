@@ -18,16 +18,17 @@
   animation-delay: 1s;
   animation-duration: 2s;
   animation-timing-function: ease;
-  z-index: 999;
+  z-index: 3;
+  cursor: default;
 }
 
 @keyframes domAnimation {
   0% {
-    padding-left: initial;
+    padding-left: 0;
   }
 
   20% {
-    padding-left: initial;
+    padding-left: 0;
   }
 
   38% {
@@ -39,7 +40,7 @@
   }
 
   73% {
-    padding-left: initial;
+    padding-left: 0;
   }
 
   100% {
@@ -52,11 +53,16 @@
   animation-duration: 1.2s;
   animation-fill-mode: forwards;
   margin-left: 16px;
+  cursor: pointer;
 
   transition: 0.4s;
   position: relative;
   right: 55%;
   overflow: hidden !important;
+
+  &:hover {
+    color: white;
+  }
 }
 
 @keyframes enterTextAnimation {
@@ -64,7 +70,7 @@
     right: 55%;
   }
 
-  40% {
+  35% {
     right: 55%;
   }
 
