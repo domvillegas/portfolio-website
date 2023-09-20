@@ -1,0 +1,35 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  li {
+    list-style-type: none;
+    font-size: 40px;
+    cursor: pointer;
+    width: fit-content;
+    transition: 0.4s;
+    opacity: 0;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.textFadeIn {
+  animation-name: textFadeIn;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,32 @@
+.menuButton {
+  background: transparent;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  color: #6c757d;
+  margin: 0 auto;
+  font-size: 30px;
+  transition: 0.4s;
+  opacity: 0;
+
+  &:hover {
+    color: #f9f9f9;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
