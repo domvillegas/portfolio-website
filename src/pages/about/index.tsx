@@ -28,7 +28,7 @@ const About = () => {
         web applications and websites.
       </p>
       <p>During my free time I paint abstracts and cycle.</p>
-      <p>Feel free to contact me for whatever &#8212; professional or otherwise.</p>
+      <p>Feel free to reach out for whatever &#8212; professional or otherwise.</p>
       <MenuButton />
     </div>
   );
