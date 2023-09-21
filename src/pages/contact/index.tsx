@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MenuButton from "@/components/MenuButton/MenuButton";
-import styles from './index.module.scss'
+import styles from "./index.module.scss";
 
 const Contact = () => {
   useEffect(() => {
@@ -15,8 +15,16 @@ const Contact = () => {
 
   return (
     <div className={styles.contact}>
-      <span>villegasdominick@gmail.com</span>
-      <MenuButton />
+      <div>
+        {" "}
+        <span>villegasdominick@gmail.com</span>{" "}
+        <i
+          className="far fa-paper-plane"
+          onClick={() => (location.href = "mailto:villegasdominick@gmail.com")}
+        />
+      </div>
+
+      <MenuButton className={styles.menuButton} />
     </div>
   );
 };

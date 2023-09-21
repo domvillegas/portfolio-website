@@ -28,13 +28,28 @@ h1 {
   font-size: 40px;
 }
 
-p, span {
+p, span, i, h2, a {
   color: #f9f9f9;
+}
+
+i, a {
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    color: #a4a4a4;
+  }
 }
 
 .fadeIn {
   animation-name: fadeIn;
   animation-duration: $animation-duration;
+  animation-fill-mode: forwards;
+}
+
+.introFadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 

@@ -17,19 +17,30 @@ const About = () => {
     }, 500);
   });
 
-  const clickHandler = (path: string) => {
-    pushRouteWithFade(path, route);
-  };
-
   return (
     <div className={styles.about}>
-      <p>
-        Dom here 👋🏾 I'm a software developer from Portland, OR. <br /> I make
-        web applications and websites.
-      </p>
-      <p>During my free time I paint abstracts and cycle.</p>
-      <p>Feel free to reach out for whatever &#8212; professional or otherwise.</p>
-      <MenuButton />
+      <div>
+        <p>
+          Dom here 👋🏾 I'm a software developer from Portland, OR. <br /> I make
+          web applications and websites.
+        </p>
+        <p>
+          During my free time I paint abstracts and cycle. <br />
+          Currently reading the LOTR trilogy and experiencing Metroid Prime.
+        </p>
+        <p>
+          Feel free to{" "}
+          <span
+            onClick={() => {
+              pushRouteWithFade("/contact", route);
+            }}
+          >
+            reach out
+          </span>{" "}
+          for whatever &#8212; professional or otherwise.
+        </p>
+        <MenuButton />
+      </div>
     </div>
   );
 };

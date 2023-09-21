@@ -3,12 +3,18 @@ import { pushRouteWithFade } from "@/utils/helpers";
 import { useRouter } from "next/router";
 import styles from "./MenuButton.module.scss";
 
-const MenuButton = () => {
+interface Props {
+  className?: string;
+}
+
+const MenuButton = ({ className }: Props) => {
   const route = useRouter();
 
   return (
     <button
-      className={`${styles.menuButton} ${styles.fadeIn}`}
+      className={`${styles.menuButton} ${styles.fadeIn} ${
+        className ? className : ""
+      }`}
       type="button"
       onClick={() => {
         pushRouteWithFade("/menu", route);

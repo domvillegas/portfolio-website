@@ -8,12 +8,12 @@ const Home = () => {
 
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
-    body.classList.add("fadeIn");
+    body.classList.add("introFadeIn");
 
     setTimeout(() => {
       body.classList.remove("fadeOut");
-      body.classList.remove("fadeIn");
-    }, 500);
+      body.classList.remove("introFadeIn");
+    }, 1500);
   });
 
   return (

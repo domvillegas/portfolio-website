@@ -10,6 +10,7 @@
 }
 
 .domText {
+  font-weight: 400;
   background-color: #111111;
   padding-right: 16px;
   border-right: 3px solid white;
@@ -48,6 +49,7 @@
 }
 
 .enterText {
+  font-weight: 400;
   animation-name: enterTextAnimation;
   animation-delay: 1.5s;
   animation-duration: 1.2s;
