@@ -26,9 +26,9 @@ const Projects = () => {
   return (
     <div className={styles.projects}>
       <div className={styles.projectsList}>
-        {projectsOrdered.map((project) => {
+        {projectsOrdered.map((project, index) => {
           return (
-            <a href={project.link} target="_blank">
+            <a key={index} href={project.link} target="_blank">
               {project.name}
             </a>
           );
