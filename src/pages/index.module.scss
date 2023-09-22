@@ -62,8 +62,10 @@
   right: 55%;
   overflow: hidden !important;
 
-  &:hover {
-    color: white;
+  @media (hover) {
+    &:hover {
+      color: white;
+    }
   }
 }
 

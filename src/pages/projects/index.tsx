@@ -1,11 +1,22 @@
 import React, { useEffect } from "react";
 import MenuButton from "@/components/MenuButton/MenuButton";
 import styles from "./index.module.scss";
+import { pushRouteWithFade } from "@/utils/helpers";
+import { useRouter } from "next/router";
 
 const projects = [
-  { name: "tdp.com", link: "" },
-  { name: "equitymultiple.com", link: "https://equitymultiple.com/" },
-  { name: "@100.11101", link: "https://www.instagram.com/100.11101/" },
+  { name: "tdp.com", link: "", targetBlank: true },
+  {
+    name: "equitymultiple.com",
+    link: "https://equitymultiple.com/",
+    targetBlank: true,
+  },
+  {
+    name: "@100.11101",
+    link: "https://www.instagram.com/100.11101/",
+    targetBlank: true,
+  },
+  { name: "/playground", link: "/playground", targetBlank: false },
 ];
 
 const projectsOrdered = projects.sort((projectA, projectB) => {
@@ -13,6 +24,8 @@ const projectsOrdered = projects.sort((projectA, projectB) => {
 });
 
 const Projects = () => {
+  const route = useRouter();
+
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
     body.classList.add("fadeIn");
@@ -28,9 +41,19 @@ const Projects = () => {
       <div className={styles.projectsList}>
         {projectsOrdered.map((project, index) => {
           return (
-            <a key={index} href={project.link} target="_blank">
+            <div
+            className={styles.projectLink}
+              onClick={() => {
+                if (project.targetBlank) {
+                  window.open(project.link, "_blank");
+                } else {
+                  pushRouteWithFade(project.link, route);
+                }
+              }}
+              key={index}
+            >
               {project.name}
-            </a>
+            </div>
           );
         })}
       </div>

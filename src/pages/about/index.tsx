@@ -25,8 +25,7 @@ const About = () => {
           web applications and websites.
         </p>
         <p>
-          During my free time I paint abstracts and cycle. <br />
-          Currently reading the LOTR trilogy and experiencing Metroid Prime.
+          During my free time I paint abstracts and cycle.
         </p>
         <p>
           Feel free to{" "}

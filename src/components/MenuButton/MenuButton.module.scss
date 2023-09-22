@@ -9,8 +9,10 @@
   transition: 0.4s;
   opacity: 0;
 
-  &:hover {
-    color: #f9f9f9;
+  @media (hover) {
+    &:hover {
+      color: #f9f9f9;
+    }
   }
 }
 

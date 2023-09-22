@@ -1,0 +1,29 @@
+.playground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.projectLink {
+  margin: 5px 0;
+  text-decoration: none;
+  border-bottom: 1px solid #f9f9f9;
+  color: #f9f9f9;
+  cursor: pointer;
+  transition: 0.4s;
+
+  @media (hover) {
+    &:hover {
+      color: #a4a4a4;
+      border-bottom: 1px solid #a4a4a4;
+    }
+  }
+}
