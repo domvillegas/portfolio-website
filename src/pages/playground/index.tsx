@@ -22,9 +22,10 @@ const Playground = () => {
   return (
     <div className={styles.playground}>
       <div className={styles.projectsList}>
-        {projects.map((project) => {
+        {projects.map((project, index) => {
           return (
             <div
+              key={index}
               className={styles.projectLink}
               onClick={() =>
                 pushRouteWithFade(`/playground/${project.name}`, route)
