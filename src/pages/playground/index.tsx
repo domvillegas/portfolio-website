@@ -36,7 +36,7 @@ const Playground = () => {
           );
         })}
       </div>
-      <MenuButton />
+      <MenuButton className={styles.menuButton} />
     </div>
   );
 };
