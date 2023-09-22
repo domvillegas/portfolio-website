@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./index.module.scss";
 import { useRouter } from "next/router";
 import { pushRouteWithFade } from "@/utils/helpers";
+import TouchGlow from "@/components/TouchGlow/TouchGlow";
 
 const Home = () => {
   const route = useRouter();

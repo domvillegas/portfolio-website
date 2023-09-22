@@ -1,0 +1,37 @@
+.touchGlow {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.glow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: #ffffff;
+  border-radius: 50px;
+  transform: translate(-50%, -50%);
+}
+
+.expand {
+  animation-name: expand;
+  animation-duration: 0.25s;
+}
+
+@keyframes expand {
+  from {
+    width: 1px;
+    height: 1px;
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  to {
+    width: 100px;
+    height: 100px;
+    filter: blur(10px);
+    opacity: 0.05;
+  }
+}

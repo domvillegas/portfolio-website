@@ -1,0 +1,17 @@
+.taproom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
+  overflow: hidden;
+
+  h2 {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    transition: 0.75s;
+  }
+}

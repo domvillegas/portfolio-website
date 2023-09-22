@@ -3,6 +3,7 @@ $animation-duration: 0.75s;
 html,
 body {
   height: 100vh;
+  width: 100vw;
   padding: 0;
   margin: 0;
 }
@@ -40,6 +41,10 @@ i, a {
   &:hover {
     color: #a4a4a4;
   }
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .fadeIn {

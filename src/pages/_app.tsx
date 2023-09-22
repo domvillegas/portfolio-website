@@ -2,6 +2,7 @@ import React from "react";
 import { AppProps } from "next/app";
 import "../styles/global-styles.scss";
 import Head from "next/head";
+import { TopLeftValuesProvider } from "@/contexts/useTopLeftValues";
 
 export const getServerSideProps = () => {};
 
@@ -21,7 +22,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           crossOrigin="anonymous"
         />
       </Head>
-      <Component {...pageProps} />
+      <TopLeftValuesProvider>
+        <Component {...pageProps} />
+      </TopLeftValuesProvider>
     </>
   );
 }
