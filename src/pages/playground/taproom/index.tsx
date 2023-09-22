@@ -31,7 +31,7 @@ const Taproom = () => {
       setHadEnoughPosition({ top: values.top, left: values.left });
     }
 
-    if (tapCounter === 15) {
+    if (tapCounter === 13) {
       setTimeout(() => {
         pushRouteWithFade("/playground", route);
       }, 3500);
@@ -66,10 +66,10 @@ const Taproom = () => {
             }`,
           }}
         >
-          {tapCounter > 7 && tapCounter < 15
+          {tapCounter > 7 && tapCounter < 13
             ? "Hey!"
             : tapCounter <= 10 && "I think you've had enough."}
-          {tapCounter >= 15 ? "Alright, buddy. You've gotta go." : ""}
+          {tapCounter >= 13 ? "Alright, buddy. You've gotta go." : ""}
         </h2>
       )}
     </div>

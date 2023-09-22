@@ -31,7 +31,7 @@ const Playground = () => {
                 pushRouteWithFade(`/playground/${project.name}`, route)
               }
             >
-              taproom
+              {project.name}
             </div>
           );
         })}
