@@ -45,7 +45,6 @@
   z-index: -1;
   background: #ffffff;
   border-radius: 100px;
-  filter: blur(10px);
 
   animation-name: titleGlow;
   animation-duration: 2s;
@@ -58,12 +57,14 @@
     width: 0;
     height: 0;
     opacity: 1;
+    filter: blur(2px);
   }
 
   50% {
     width: 200px;
     height: 200px;
     opacity: 0;
+    filter: blur(10px);
   }
 
   100% {
