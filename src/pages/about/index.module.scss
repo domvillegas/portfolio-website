@@ -10,13 +10,14 @@
   }
 
   span {
-    text-decoration: underline;
+    border-bottom: 1px solid #f9f9f9;
     cursor: pointer;
     transition: 0.4s;
 
     @media (hover) {
       &:hover {
         color: #a4a4a4;
+        border-bottom: 1px solid #a4a4a4;
       }
     }
   }
