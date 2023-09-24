@@ -15,3 +15,60 @@
     transition: 0.75s;
   }
 }
+
+.titleDrop {
+  animation-name: titleDrop;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes titleDrop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  88% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.titleGlow {
+  position: absolute;
+  z-index: -1;
+  background: #ffffff;
+  border-radius: 100px;
+  filter: blur(10px);
+
+  animation-name: titleGlow;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes titleGlow {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  50% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}

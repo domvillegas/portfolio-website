@@ -50,7 +50,8 @@ const Taproom = () => {
   return (
     <div className={styles.taproom} onClick={tapHandler}>
       <TouchGlow />
-      <h1>taproom</h1>
+      <h1 className={`${tapCounter < 3 ? styles.titleDrop : ""}`}>taproom</h1>
+      <div className={`${tapCounter < 3 ? styles.titleGlow : ""}`} />
       {tapCounter >= 5 && (
         <h2
           style={{
