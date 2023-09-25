@@ -1,0 +1,14 @@
+.square {
+  width: 250px;
+  height: 250px;
+  margin: 15px;
+  border: 1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 15px;
+  transition: 0.4s;
+
+  &:hover {
+    border: 1px solid rgb(187, 187, 187);
+  }
+}
