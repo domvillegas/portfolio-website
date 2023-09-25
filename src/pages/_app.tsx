@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import "../styles/global-styles.scss";
 import Head from "next/head";
 import { TopLeftValuesProvider } from "@/contexts/useTopLeftValues";
+import ogImage from "../assets/images/ogImage.png";
 
 export const getServerSideProps = () => {};
 
@@ -28,7 +29,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="A front end developer from Portland, OR."
         />
-        <meta property="og:image" content="/assets/images/ogImage.png" />
+        <meta property="og:image" content={ogImage.src} />
       </Head>
       <TopLeftValuesProvider>
         <Component {...pageProps} />
