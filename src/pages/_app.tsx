@@ -21,6 +21,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
           crossOrigin="anonymous"
         />
+        <meta property="og:title" content="dom" />
+        <meta property="og:site_name" content="domvillegas.com" />
+        <meta property="og:url" content="domvilleegas.com" />
+        <meta
+          property="og:description"
+          content="A front end developer from Portland, OR."
+        />
+        <meta property="og:image" content="/assets/images/ogImage.png" />
       </Head>
       <TopLeftValuesProvider>
         <Component {...pageProps} />
