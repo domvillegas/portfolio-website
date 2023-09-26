@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./Stars.module.scss";
 
-const starCount = 100;
+const starCount = 200;
 
 const Star = () => {
-
   return Array.from(Array(starCount)).map((_, index) => {
     return (
       <div
@@ -18,7 +17,10 @@ const Star = () => {
           left: `${Math.random() * 101}%`,
         }}
       >
-        <div className={styles.objectContainer}>
+        <div
+          style={{ animationDelay: `${5 + (index * 0.025)}s` }}
+          className={`${styles.objectContainer} ${styles.twinkle}`}
+        >
           <div
             style={{ animationDelay: `${index * 0.025}s` }}
             className={`${styles.object} ${

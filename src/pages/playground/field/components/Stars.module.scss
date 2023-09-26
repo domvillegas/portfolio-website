@@ -1,4 +1,4 @@
-.stars {
+.star {
   cursor: pointer;
 }
 
@@ -65,5 +65,28 @@
     transform: rotate(400deg);
     opacity: 1;
     border: 0.25px solid #535353;
+  }
+}
+
+.twinkle {
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  50% {
+    opacity: 0.20;
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
   }
 }

@@ -13,6 +13,10 @@ const Field = () => {
           open
         </button>
       )}
+      {/* these buttons will allow the user to highlight specific categories of stars.
+      "Highlight" really means make the non-selected stars invisible */}
+      {/* <button>claimed</button>
+      <button>unclaimed</button> */}
     </div>
   );
 };
