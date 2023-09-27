@@ -1,3 +1,15 @@
+.stars {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  animation-name: expansion;
+  animation-delay: 10s;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
+  animation-timing-function: ease-in-out;
+}
+
 .star {
   cursor: pointer;
 }
@@ -81,12 +93,26 @@
   }
 
   50% {
-    opacity: 0.20;
+    opacity: 0.2;
     filter: blur(1px);
   }
 
   100% {
     opacity: 1;
     filter: blur(0);
+  }
+}
+
+@keyframes expansion {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
