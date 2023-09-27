@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./Stars.module.scss";
-
-const starCount = 200;
+import { starsPositions } from "../starsPositions";
 
 const Star = () => {
-  return Array.from(Array(starCount)).map((_, index) => {
+  return starsPositions.map((starPosition, index) => {
     return (
       <div
         onClick={() => window.alert(`Star ${index}`)}
@@ -12,13 +11,12 @@ const Star = () => {
         key={index}
         style={{
           position: "fixed",
-          //   could add Math.floor to both of these values to create a grid
-          top: `${Math.random() * 101}%`,
-          left: `${Math.random() * 101}%`,
+          top: starPosition.top,
+          left: starPosition.left,
         }}
       >
         <div
-          style={{ animationDelay: `${5 + (index * 0.025)}s` }}
+          style={{ animationDelay: `${5 + index * 0.025}s` }}
           className={`${styles.objectContainer} ${styles.twinkle}`}
         >
           <div
