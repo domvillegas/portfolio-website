@@ -2,13 +2,17 @@ import React from "react";
 import styles from "./Stars.module.scss";
 import { starsPositions } from "../starsPositions";
 
-const Stars = () => {
+interface Props {
+  action: () => void;
+}
+
+const Stars = ({ action }: Props) => {
   return (
     <div className={styles.stars}>
       {starsPositions.map((starPosition, index) => {
         return (
           <div
-            onClick={() => window.alert(`Star ${index}`)}
+            onClick={action}
             className={styles.star}
             key={index}
             style={{

@@ -5,3 +5,30 @@
   top: 0;
   right: 0;
 }
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+
+  button {
+    background: none;
+    border: 1px solid #6c757d;
+    border-radius: 3px;
+    color: #6c757d;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    transition: 0.4s;
+
+    &:hover {
+      color: white;
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
+}
