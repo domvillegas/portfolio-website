@@ -5,7 +5,15 @@ import Modal from "@/components/Modal/Modal";
 
 const Field = () => {
   const [summoned, setSummoned] = useState(false);
+  const [summonedClicked, setSummonedClicked] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const summonHandler = () => {
+    setSummonedClicked(true);
+    setTimeout(() => {
+      setSummoned(true);
+    }, 750);
+  };
 
   return (
     <div className={styles.field}>
@@ -15,8 +23,12 @@ const Field = () => {
           <Modal visible={modalIsOpen} close={() => setModalIsOpen(false)} />
         </>
       ) : (
-        <div className={styles.buttonContainer}>
-          <button type="button" onClick={() => setSummoned(true)}>
+        <div
+          className={`${styles.buttonContainer} ${
+            summonedClicked ? styles.buttonFade : ""
+          }`}
+        >
+          <button type="button" onClick={summonHandler}>
             <h1>summon</h1>
           </button>
         </div>
