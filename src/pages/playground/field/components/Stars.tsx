@@ -1,24 +1,25 @@
 import React from "react";
 import styles from "./Stars.module.scss";
-import { starsPositions } from "../starsPositions";
+import { Star } from "@/utils/types";
 
 interface Props {
-  action: () => void;
+  action: (id: string) => void;
+  data: Star[];
 }
 
-const Stars = ({ action }: Props) => {
+const Stars = ({ action, data }: Props) => {
   return (
     <div className={styles.stars}>
-      {starsPositions.map((starPosition, index) => {
+      {data.map((star, index) => {
         return (
           <div
-            onClick={action}
+            onClick={() => action(star.id)}
             className={styles.star}
             key={index}
             style={{
               position: "fixed",
-              top: starPosition.top,
-              left: starPosition.left,
+              top: star.position.y,
+              left: star.position.x,
             }}
           >
             <div

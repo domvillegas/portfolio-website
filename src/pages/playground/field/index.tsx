@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Field.module.scss";
 import Stars from "./components/Stars";
 import Modal from "@/components/Modal/Modal";
+import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { db } from "@/APIs/field";
+import { Star } from "@/utils/types";
 
 const Field = () => {
   const [summoned, setSummoned] = useState(false);
   const [summonedClicked, setSummonedClicked] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [stars, setStars] = useState<[] | Star[]>([]);
+  const [selectedStar, setSelectedStar] = useState<{} | Star>([]);
+
+  useEffect(() => {
+    const getStarData = async () => {
+      try {
+        const starsData = await getDocs(collection(db, "stars"));
+        const processedStarsData = starsData.docs.map((star) => ({
+          ...star.data(),
+          id: star.id,
+        }));
+        setStars(processedStarsData as Star[]);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    getStarData();
+  }, []);
 
   const summonHandler = () => {
     setSummonedClicked(true);
@@ -15,12 +36,27 @@ const Field = () => {
     }, 750);
   };
 
+  const starClickHandler = async (starId: string) => {
+    const starReference = doc(db, "stars", starId);
+    const starDocument = await getDoc(starReference);
+
+    try {
+      setSelectedStar(starDocument as unknown as Star);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className={styles.field}>
       {summoned ? (
         <>
-          <Stars action={() => setModalIsOpen(true)} />
-          <Modal visible={modalIsOpen} close={() => setModalIsOpen(false)} />
+          <Stars action={starClickHandler} data={stars} />
+          <Modal
+            visible={(selectedStar as any).id ? true : false}
+            close={() => setSelectedStar([])}
+            data={selectedStar}
+          />
         </>
       ) : (
         <div
