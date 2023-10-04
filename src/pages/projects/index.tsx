@@ -7,11 +7,6 @@ import { useRouter } from "next/router";
 const projects = [
   { name: "tdp.com", link: "", targetBlank: true },
   {
-    name: "equitymultiple.com",
-    link: "https://equitymultiple.com/",
-    targetBlank: true,
-  },
-  {
     name: "@100.11101",
     link: "https://www.instagram.com/100.11101/",
     targetBlank: true,
@@ -42,7 +37,7 @@ const Projects = () => {
         {projectsOrdered.map((project, index) => {
           return (
             <div
-            className={styles.projectLink}
+              className={styles.projectLink}
               onClick={() => {
                 if (project.targetBlank) {
                   window.open(project.link, "_blank");

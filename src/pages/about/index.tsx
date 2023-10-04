@@ -21,12 +21,10 @@ const About = () => {
     <div className={styles.about}>
       <div>
         <p>
-          Dom here 👋🏾 I'm a software developer from Portland, OR. <br /> I make
+          Dom here 👋🏾 I'm a frontend developer from Portland, OR. <br /> I make
           web applications and websites.
         </p>
-        <p>
-          During my free time I paint abstracts and cycle.
-        </p>
+        <p>During my free time I paint abstracts and cycle.</p>
         <p>
           Feel free to{" "}
           <span
