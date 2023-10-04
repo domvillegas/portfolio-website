@@ -1,5 +1,5 @@
 .modal {
-  width: 85%;
+  width: 80%;
   height: 100%;
   max-width: 400px;
   max-height: 400px;
@@ -7,7 +7,7 @@
   border: 1px solid white;
   margin: auto;
   color: white;
-  background: black;
+  background: #111111;
   padding: 20px;
   position: absolute;
   top: 50%;
@@ -26,4 +26,44 @@
   opacity: 0;
   top: 47%;
   pointer-events: none;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.closeButton {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+
+  &:hover {
+    div {
+      background: #9c9c9c;
+    }
+  }
+
+  div {
+    transition: 0.4s;
+    background: white;
+    width: 2px;
+    height: 20px;
+    position: absolute;
+    right: 9px;
+    top: 0;
+  }
+}
+
+.closeButtonArmOne {
+  transform: rotate(45deg);
+}
+
+.closeButtonArmTwo {
+  transform: rotate(-45deg);
 }

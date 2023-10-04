@@ -6,6 +6,41 @@
   right: 0;
 }
 
+.starForm {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    background-color: #111111;
+    border: 1px solid #545454;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: white;
+
+    &:focus {
+      outline: none;
+      border: 1px solid white;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background: #111111;
+    border: 1px solid #545454;
+    padding: 10px;
+    color: #545454;
+    text-transform: uppercase;
+    transition: 0.4s;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
 .buttonContainer {
   display: flex;
   justify-content: center;
