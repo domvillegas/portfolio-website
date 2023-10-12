@@ -15,6 +15,16 @@ const Field = () => {
   const [starDescription, setStarDescription] = useState("");
 
   useEffect(() => {
+    const body = document.getElementsByTagName("body")[0];
+    body.classList.add("fadeIn");
+    body.classList.remove("fadeOut");
+
+    setTimeout(() => {
+      body.classList.remove("fadeIn");
+    }, 500);
+  }, []);
+
+  useEffect(() => {
     const getStarData = async () => {
       try {
         const starsData = await getDocs(collection(db, "stars"));

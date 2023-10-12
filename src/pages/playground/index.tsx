@@ -4,7 +4,14 @@ import styles from "./playground.module.scss";
 import { useRouter } from "next/router";
 import { pushRouteWithFade } from "@/utils/helpers";
 
-const projects = [{ name: "taproom", link: "/taproom" }];
+const projects = [
+  { name: "taproom", link: "/taproom" },
+  { name: "field", link: "/field" },
+];
+
+const projectsSorted = projects.sort((projectA, projectB) => {
+  return projectA.name.length - projectB.name.length;
+});
 
 const Playground = () => {
   const route = useRouter();
@@ -22,7 +29,7 @@ const Playground = () => {
   return (
     <div className={styles.playground}>
       <div className={styles.projectsList}>
-        {projects.map((project, index) => {
+        {projectsSorted.map((project, index) => {
           return (
             <div
               key={index}
