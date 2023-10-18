@@ -11,6 +11,8 @@ import {
 } from "firebase/firestore";
 import { db } from "@/APIs/field";
 import { Star } from "@/utils/types";
+import { pushRouteWithFade } from "@/utils/helpers";
+import { useRouter } from "next/router";
 
 const Field = () => {
   const [summoned, setSummoned] = useState(false);
@@ -22,11 +24,17 @@ const Field = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [introModalOpen, setIntroModalOpen] = useState<boolean>(false);
 
+  const route = useRouter();
+
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
     body.classList.add("fadeIn");
     body.classList.remove("fadeOut");
     setIntroModalOpen(true);
+
+    body.firstChild?.firstChild?.addEventListener("dblclick", () => {
+      pushRouteWithFade("/playground", route);
+    });
 
     setTimeout(() => {
       body.classList.remove("fadeIn");
