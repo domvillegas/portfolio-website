@@ -36,7 +36,7 @@ const Taproom = () => {
         pushRouteWithFade("/playground", route);
       }, 3500);
     }
-  }, [tapCounter]);
+  }, [tapCounter, route, values.left, values.top]);
 
   //The tap Handler's name is Sierra. She's very cute.
   const tapHandler = () => {

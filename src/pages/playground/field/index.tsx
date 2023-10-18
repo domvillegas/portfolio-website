@@ -39,7 +39,7 @@ const Field = () => {
     setTimeout(() => {
       body.classList.remove("fadeIn");
     }, 500);
-  }, []);
+  }, [route]);
 
   useEffect(() => {
     const getStarData = async () => {
