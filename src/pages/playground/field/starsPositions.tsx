@@ -399,3 +399,7 @@ export const starsPositions = [
 
   { top: "28.136362488583867%", left: "75.0759530181104%" },
 ];
+
+export default function ThisComponentPleasesNext() {
+  return <></>;
+}
