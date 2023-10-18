@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import styles from "./Field.module.scss";
 import Stars from "./components/Stars";
 import Modal from "@/components/Modal/Modal";
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { db } from "@/APIs/field";
 import { Star } from "@/utils/types";
 
@@ -10,14 +16,17 @@ const Field = () => {
   const [summoned, setSummoned] = useState(false);
   const [summonedClicked, setSummonedClicked] = useState(false);
   const [stars, setStars] = useState<[] | Star[]>([]);
-  const [selectedStar, setSelectedStar] = useState<{} | Star>([]);
+  const [selectedStar, setSelectedStar] = useState<null | Star>(null);
   const [starName, setStarName] = useState("");
   const [starDescription, setStarDescription] = useState("");
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [introModalOpen, setIntroModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const body = document.getElementsByTagName("body")[0];
     body.classList.add("fadeIn");
     body.classList.remove("fadeOut");
+    setIntroModalOpen(true);
 
     setTimeout(() => {
       body.classList.remove("fadeIn");
@@ -51,19 +60,41 @@ const Field = () => {
   const starClickHandler = async (starId: string) => {
     const starReference = doc(db, "stars", starId);
     const starDocument = await getDoc(starReference);
+    setModalOpen(true);
 
     try {
-      setSelectedStar(starDocument as unknown as Star);
+      setSelectedStar(starDocument.data() as Star);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const updateStar = async (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    starId: Star["id"]
+  ) => {
+    event.preventDefault();
+
+    const starReference = doc(db, "stars", starId);
+
+    updateDoc(starReference, {
+      name: starName,
+      note: starDescription,
+      editTime: new Date(),
+    });
+
+    setModalOpen(false);
+  };
+
   const modalContent = (
     <div className={styles.starForm}>
       <form>
-        {(selectedStar as Star).name ? (
-          <span>{(selectedStar as Star).name}</span>
+        {(selectedStar as Star)?.name ? (
+          <div className={styles.claimedModalField}>
+            <span>Name: </span>
+            <br />
+            <input placeholder={(selectedStar as Star)?.name} />
+          </div>
         ) : (
           <input
             type="name"
@@ -71,8 +102,12 @@ const Field = () => {
             onChange={(event) => setStarName(event.target.value)}
           />
         )}
-        {(selectedStar as Star).note ? (
-          <span>{(selectedStar as Star).note}</span>
+        {(selectedStar as Star)?.note ? (
+          <div className={styles.claimedModalField}>
+            <span>Description: </span>
+            <br />
+            <input placeholder={(selectedStar as Star)?.note} />
+          </div>
         ) : (
           <input
             type="text"
@@ -80,24 +115,70 @@ const Field = () => {
             onChange={(event) => setStarDescription(event.target.value)}
           />
         )}
-
-        <button type="submit">
-          {(selectedStar as Star).editTime ? "Alter" : "Claim"}
+        <button
+          type="submit"
+          onClick={(event) => updateStar(event, (selectedStar as Star).id)}
+        >
+          {(selectedStar as Star)?.editTime ? "Alter" : "Claim"}
         </button>
+        {(selectedStar as Star)?.editTime && (
+          <div className={styles.lastEdited}>
+            <span>Last Edited: </span>
+            <br />
+            <span>{`${new Date(
+              (selectedStar as Star).editTime.seconds * 1000
+            )}`}</span>
+          </div>
+        )}
       </form>
+    </div>
+  );
+
+  const introModal = (
+    <div className={styles.introModalContent}>
+      <span>Welcome to "Field"</span>
+      <span>
+        I made this to practice some animation ideas and to learn how to use
+        Firebase.
+      </span>
+      <span>Here's some guidance 👇</span>
+      <ol>
+        <li>
+          If at any point you feel uncomfortable double tap or double click to
+          eject from the experience.
+        </li>
+        <li>Have fun or just leave a note or something. Say hello? 🥹</li>
+        <li>
+          I'm cheap so we can only generate 13,000 objects per day. If objects
+          aren't being generated it's because we've collectively reached our
+          quota.
+        </li>
+        <li>
+          The experience is way better on laptops and desktops, but works
+          decently on phones and tablets.
+        </li>
+        <li>Good luck.</li>
+      </ol>
+      <div className={styles.introModalButtonWrap}>
+        <button onClick={() => setIntroModalOpen(false)}>Begin</button>
+      </div>
     </div>
   );
 
   return (
     <div className={styles.field}>
+      <Modal
+        markup={introModal}
+        visible={introModalOpen}
+        close={() => setIntroModalOpen(false)}
+      />
       {summoned ? (
         <>
           <Stars action={starClickHandler} data={stars} />
           <Modal
             markup={modalContent}
-            visible={(selectedStar as any).id ? true : false}
-            close={() => setSelectedStar([])}
-            data={selectedStar}
+            visible={modalOpen}
+            close={() => setModalOpen(false)}
           />
         </>
       ) : (
