@@ -5,7 +5,7 @@ import { pushRouteWithFade } from "@/utils/helpers";
 import { useRouter } from "next/router";
 
 const projects = [
-  { name: "tdp.com", link: "", targetBlank: true },
+  { name: "tongue.dance", link: "http://tongue.dance/", targetBlank: true },
   {
     name: "@100.11101",
     link: "https://www.instagram.com/100.11101/",
