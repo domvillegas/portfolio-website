@@ -4,6 +4,12 @@
   height: 100%;
   top: 0;
   right: 0;
+
+  textarea {
+    font-family: -apple-system, "system-ui", "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
 }
 
 .introModalContent {
@@ -49,13 +55,15 @@
     flex-direction: column;
   }
 
-  input {
+  input,
+  textarea {
     background-color: #111111;
     border: 1px solid #545454;
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 15px;
-    color: white;
+    color: white !important;
+    max-width: 175px;
 
     &:focus {
       outline: none;
@@ -71,6 +79,7 @@
     color: #545454;
     text-transform: uppercase;
     transition: 0.4s;
+    margin-bottom: 10px;
 
     &:hover {
       color: white;
@@ -79,9 +88,12 @@
 }
 
 .claimedModalField {
-  input {
+  input,
+  textarea {
     padding: 5px;
     margin-top: 5px;
+    width: 100%;
+    max-width: 175px;
 
     &::placeholder {
       color: white;

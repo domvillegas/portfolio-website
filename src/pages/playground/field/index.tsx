@@ -19,6 +19,7 @@ const Field = () => {
   const [summonedClicked, setSummonedClicked] = useState(false);
   const [stars, setStars] = useState<[] | Star[]>([]);
   const [selectedStar, setSelectedStar] = useState<null | Star>(null);
+  const [selectedStarRaw, setSelectedStarRaw] = useState([]);
   const [starName, setStarName] = useState("");
   const [starDescription, setStarDescription] = useState("");
   const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -71,6 +72,7 @@ const Field = () => {
     setModalOpen(true);
 
     try {
+      setSelectedStarRaw(starDocument as any);
       setSelectedStar(starDocument.data() as Star);
     } catch (error) {
       console.error(error);
@@ -101,7 +103,10 @@ const Field = () => {
           <div className={styles.claimedModalField}>
             <span>Name: </span>
             <br />
-            <input placeholder={(selectedStar as Star)?.name} />
+            <input
+              placeholder={(selectedStar as Star)?.name}
+              onChange={(event) => setStarName(event.target.value)}
+            />
           </div>
         ) : (
           <input
@@ -114,18 +119,20 @@ const Field = () => {
           <div className={styles.claimedModalField}>
             <span>Description: </span>
             <br />
-            <input placeholder={(selectedStar as Star)?.note} />
+            <textarea
+              placeholder={(selectedStar as Star)?.note}
+              onChange={(event) => setStarDescription(event.target.value)}
+            />
           </div>
         ) : (
-          <input
-            type="text"
+          <textarea
             placeholder="Star Description"
             onChange={(event) => setStarDescription(event.target.value)}
           />
         )}
         <button
           type="submit"
-          onClick={(event) => updateStar(event, (selectedStar as Star).id)}
+          onClick={(event) => updateStar(event, (selectedStarRaw as any).id)}
         >
           {(selectedStar as Star)?.editTime ? "Alter" : "Claim"}
         </button>
@@ -157,7 +164,7 @@ const Field = () => {
         </li>
         <li>Have fun or just leave a note or something. Say hello? 🥹</li>
         <li>
-          I'm cheap so we can only generate 13,000 objects per day. If objects
+          I'm cheap so we can only generate 50,000 objects per day. If objects
           aren't being generated it's because we've collectively reached our
           quota.
         </li>
