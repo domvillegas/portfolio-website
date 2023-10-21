@@ -153,24 +153,24 @@ const Field = () => {
     <div className={styles.introModalContent}>
       <span>Welcome to "Field"</span>
       <span>
-        I made this to practice some animation ideas and to learn how to use
+        I made this to practice an animation idea and to learn how to use
         Firebase.
       </span>
       <span>Here's some guidance 👇</span>
       <ol>
+        <li>
+          ⚠️ The experience does NOT work on phones. Your phone browser will
+          crash ⚠️
+        </li>
         <li>
           If at any point you feel uncomfortable double tap or double click to
           eject from the experience.
         </li>
         <li>Have fun or just leave a note or something. Say hello? 🥹</li>
         <li>
-          I'm cheap so we can only generate 50,000 objects per day. If objects
-          aren't being generated it's because we've collectively reached our
-          quota.
-        </li>
-        <li>
-          The experience is way better on laptops and desktops, but works
-          decently on phones and tablets.
+          I'm cheap (✨ responsible ✨) so we can only generate 50,000 objects
+          per day. If objects aren't being generated it's because we've
+          collectively reached our quota.
         </li>
         <li>Good luck.</li>
       </ol>
