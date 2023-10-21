@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Field.module.scss";
-import Stars from "./components/Stars";
+import Stars from "../../../components/Stars/Stars";
 import Modal from "@/components/Modal/Modal";
 import {
   collection,

@@ -401,5 +401,5 @@ export const starsPositions = [
 ];
 
 export default function ThisComponentPleasesNext() {
-  return <>Super Cool Page</>;
+  return <></>;
 }
