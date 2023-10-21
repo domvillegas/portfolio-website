@@ -168,10 +168,6 @@ const Field = () => {
           aren't being generated it's because we've collectively reached our
           quota.
         </li>
-        <li>
-          The experience is way better on laptops and desktops, but works
-          decently on phones and tablets.
-        </li>
         <li>Good luck.</li>
       </ol>
       <div className={styles.introModalButtonWrap}>
