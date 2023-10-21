@@ -153,14 +153,14 @@ const Field = () => {
     <div className={styles.introModalContent}>
       <span>Welcome to "Field"</span>
       <span>
-        I made this to practice some animation ideas and to learn how to use
+        I made this to practice an animation idea and to learn how to use
         Firebase.
       </span>
       <span>Here's some guidance 👇</span>
       <ol>
         <li>
-          If at any point you feel uncomfortable double tap or double click to
-          eject from the experience.
+          ⚠️ The experience does NOT work on phones. Your phone browser will
+          crash ⚠️
         </li>
         <li>Have fun or just leave a note or something. Say hello? 🥹</li>
         <li>
