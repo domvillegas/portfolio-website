@@ -162,6 +162,10 @@ const Field = () => {
           ⚠️ The experience does NOT work on phones. Your phone browser will
           crash ⚠️
         </li>
+        <li>
+          If you feel uncomfortable at any moment, double click to eject from
+          the experience.
+        </li>
         <li>Have fun or just leave a note or something. Say hello? 🥹</li>
         <li>
           I'm cheap so we can only generate 50,000 objects per day. If objects
