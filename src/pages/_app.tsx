@@ -35,6 +35,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           content="A front end developer from Portland, OR."
         />
         <meta property="og:image" content={ogImage.src} />
+        <meta name="description" content="Dude from Portland, OR." />
       </Head>
       <TopLeftValuesProvider>
         <Component {...pageProps} />
