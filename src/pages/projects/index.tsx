@@ -12,11 +12,6 @@ const projects = [
     targetBlank: true,
   },
   { name: "/playground", link: "/playground", targetBlank: false },
-  {
-    name: "Red Like Raindrops In Fall",
-    link: "https://www.redlikeraindropsinfall.com/",
-    targetBlank: true,
-  },
 ];
 
 const projectsOrdered = projects.sort((projectA, projectB) => {
