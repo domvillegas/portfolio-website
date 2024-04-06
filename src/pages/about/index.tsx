@@ -25,15 +25,15 @@ const About = () => {
           web applications and websites. I currently work on{" "}
           <a href="https://www.ui.com/" target="_blank">
             ui.com
-          </a>{" "}
-          ,{" "}
+          </a>
+          {/* ,{" "}
           <a href="https://equitymultiple.com/" target="_blank">
             equitymultiple.com
           </a>
           , and{" "}
           <a href="https://www.tongue.dance/" target="_blank">
             tongue.dance
-          </a>
+          </a> */}
           .
         </p>
         <p>During my free time I paint abstracts and cycle.</p>
