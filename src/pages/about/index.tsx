@@ -21,11 +21,12 @@ const About = () => {
     <div className={styles.about}>
       <div>
         <p>
-          Dom here 👋🏾 I'm a frontend developer from Portland, OR. <br /> I make
-          web applications and websites. I currently work on{" "}
+          Dom. I'm a frontend developer from Portland, OR. <br /> I make web
+          applications and websites. I currently work on{" "}
           <a href="https://www.ui.com/" target="_blank">
             ui.com
-          </a>
+          </a>{" "}
+          and their family of web experiences.
           {/* ,{" "}
           <a href="https://equitymultiple.com/" target="_blank">
             equitymultiple.com
@@ -34,7 +35,6 @@ const About = () => {
           <a href="https://www.tongue.dance/" target="_blank">
             tongue.dance
           </a> */}
-          .
         </p>
         <p>During my free time I paint abstracts and cycle.</p>
         <p>
