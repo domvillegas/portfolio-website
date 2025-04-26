@@ -32,10 +32,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="domvilleegas.com" />
         <meta
           property="og:description"
-          content="Dude from Portland, OR."
+          content="Writer from Portland, OR."
         />
         <meta property="og:image" content={ogImage.src} />
-        <meta name="description" content="Dude from Portland, OR." />
+        <meta name="description" content="Writer from Portland, OR." />
       </Head>
       <TopLeftValuesProvider>
         <Component {...pageProps} />

@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 
 const menuItems = [
   { text: "about", path: "/about" },
-  { text: "projects", path: "/projects" },
+  // { text: "projects", path: "/projects" },
   { text: "contact", path: "/contact" },
 ];
 
